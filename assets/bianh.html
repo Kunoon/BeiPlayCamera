@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片变化</title>
+<link type="text/css" rel="stylesheet" href="css/bianh.css" />
+
+</head>
+
+<body>
+	<div class="bianh_0846" id="bianh_0846">
+		<ul>
+        	<li>
+            	<img src="images/mm_pqr_back_normal.png"  ondragstart="return false;"/>
+                <div>生成二维码</div>
+            </li>
+            <li>
+            	<img src="images/mm_qr_back_normal.png"  ondragstart="return false;"/>
+                <div>扫描二维码</div>
+             </li>
+        </ul>
+		<div class="clear"></div>
+        <ul>
+        	<li>
+            	<img src="images/mm_idc_back_normal.png"  ondragstart="return false;"/>
+                <div>扫描身份证</div>
+             </li>
+            <li>
+            	<img src="images/mm_webv_back_normal.png"  ondragstart="return false;"/>
+                <div>TMP</div>
+             </li>
+        </ul>
+        <div class="clear"></div>
+     </div> 
+<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+		 var str_bianh_01 = ['images/mm_pqr_back_normal.png', 'images/mm_qr_back_normal.png', 'images/mm_idc_back_normal.png', 'images/mm_webv_back_normal.png'];
+		  var str_bianh_02 = ['images/mm_pqr_back_pressed.png', 'images/mm_qr_back_pressed.png', 'images/mm_idc_back_pressed.png', 'images/mm_webv_back_pressed.png'];
+		
+		$("#bianh_0846 li").mousedown(function(){
+			$(this).css("background-color","#FF0");
+			var bianh_iuy= $(this).find("img").attr("src");
+			bianh_mOver(bianh_iuy,this);
+		  });
+		$("#bianh_0846").mouseup(function(){
+			$("#bianh_0846 li").css("background-color","#FFF");
+			var ttiu=$("#bianh_0846 img");
+			$(ttiu[0]).attr("src",str_bianh_01[0]);
+			$(ttiu[1]).attr("src",str_bianh_01[1]);
+			$(ttiu[2]).attr("src",str_bianh_01[2]);
+			$(ttiu[3]).attr("src",str_bianh_01[3]);
+		  });
+
+		  
+		 function bianh_mOver(bianh_iuy,kuy){
+			 	if(bianh_iuy==str_bianh_01[0]){
+					$(kuy).find("img").attr("src",str_bianh_02[0]);
+				}
+				if(bianh_iuy==str_bianh_01[1]){
+					$(kuy).find("img").attr("src",str_bianh_02[1]);
+				}
+				if(bianh_iuy==str_bianh_01[2]){
+					$(kuy).find("img").attr("src",str_bianh_02[2]);
+				}
+				if(bianh_iuy==str_bianh_01[3]){
+					$(kuy).find("img").attr("src",str_bianh_02[3]);
+				}
+			 }
+			$(function(){
+					$("#bianh_0846").css("height",$(window).height());
+				 })
+			$(window).resize(function() {
+					$("#bianh_0846").css("height",$(window).height());
+			});
+</script>
+</body>
+
+</html>

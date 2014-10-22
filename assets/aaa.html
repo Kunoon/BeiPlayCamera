@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Demo</title>
+<script type="text/javascript">
+function onIDButtonClick() {
+	var text = beizhu.onIDButtonClick("准备调用身份证扫描！！！");
+	alert(text);
+}
+function onQRButtonClick() {
+	var str = "准备扫描二维码！！！";
+	var width = 768;
+	var heigth = 1024;
+	beizhu.onQRButtonClick(str, width, heigth);
+	alert(str);
+}
+function onGoButtonClick() {
+	var str = "正在跳转到其他页面！！！";
+	beizhu.onGoButtonClick();
+	alert(str);
+}
+
+</script>
+</head>
+<style type="text/css">
+	.button {
+		color:#fff;
+		font-weight:bold;
+		font-size: 16px; 
+		text-align:center;
+		padding:.3em .4em .4em .3em;
+		border-style:solid;
+		border-width:2px;
+		border-color:#9cf #159 #159 #9cf;
+		background:#69c url(../images/bg-btn-blue.gif) repeat-x;
+	}
+    </style>
+<body>
+<div align="center"><br/>
+<fieldset style="width:80%">
+<legend>身份证号码</legend>
+<table width="70%" border="1" bordercolor="#3366CC">
+  <tr>
+    <td width="50%" height="50"><div align="center">
+      <input type="text" name="txt_id" id="txt_id" width="100%" />
+    </div></td>
+    <td width="50%" height="50"><div align="center">
+      <input type="button" value="扫描ID" name="btn_id" id="btn_id" class="button" onClick="onIDButtonClick()" />
+    </div></td>
+  </tr>
+  <tr>
+    <td width="50%" height="50"><div align="center">
+      <input type="text" name="txt_qr" id="txt_qr" width="100%" />
+    </div></td>
+    <td width="50%" height="50"><div align="center">
+      <input type="button" value="扫描QR" name="btn_qr" id="btn_qr" class="button" onClick="onQRButtonClick()" />
+    </div></td>
+  </tr>
+  <tr>
+  	<td colspan="2"><div align="center">
+		<input type="button" value="跳转" class="button" onClick="onGoButtonClick()" />
+	</div></td>
+  </tr>
+</table>
+</fieldset>
+</div>
+</body>
+</html>
